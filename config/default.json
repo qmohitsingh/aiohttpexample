@@ -1,0 +1,89 @@
+{
+  //
+  // Extends
+  //
+  extends: [
+    // https://docs.renovatebot.com/presets-config/#configbest-practices
+    "config:best-practices",
+
+    // Update gitlab pipeline versions
+    // CI_PIPELINE_SOURCEhttps://docs.renovatebot.com/presets-customManagers/#custommanagersgitlabpipelineversions
+    "customManagers:gitlabPipelineVersions",
+
+    // Use recommended MR grouping
+    // https://docs.renovatebot.com/presets-group/#grouprecommended
+    "group:recommended",
+
+    // Use recommended package replacements
+    // https://docs.renovatebot.com/presets-replacements/#replacementsall
+    "replacements:all",
+
+    // Schedule MRs off-hours
+    // https://docs.renovatebot.com/presets-schedule/#schedulenonofficehours
+    "schedule:nonOfficeHours",
+
+    // Show Merge Confidence scores
+    "mergeConfidence:all-badges",
+
+    // Show OpenSSF badge on MRs
+    // https://docs.renovatebot.com/presets-security/#securityopenssf-scorecard
+    "security:openssf-scorecard",
+  ],
+
+  // Create vulnerability alerts
+  // https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts
+  vulnerabilityAlerts: {
+    enabled: true,
+    addLabels: [
+      "security",
+      "renovate::security",
+      "severity::{{lowercase vulnerabilitySeverity}}",
+      "priority::high",
+    ],
+  },
+  // https://docs.renovatebot.com/configuration-options/#osvvulnerabilityalerts
+  osvVulnerabilityAlerts: true,
+
+  //
+  // Package rules
+  //
+  packageRules: [
+    // Add basic labels for filtering on update type
+    {
+      matchUpdateTypes: ["major"],
+      addLabels: ["renovate::major", "priority::low"],
+    },
+    {
+      matchUpdateTypes: ["minor"],
+      addLabels: ["renovate::minor", "priority::medium"],
+    },
+    {
+      matchUpdateTypes: ["patch"],
+      addLabels: ["renovate::patch", "priority::medium"],
+    },
+    {
+      matchUpdateTypes: ["pin", "digest"],
+      addLabels: ["renovate::pin"],
+    },
+
+    // Guard against quickly pulled packages
+    {
+      matchPackageNames: ["/.*/"],
+      minimumReleaseAge: "3 days",
+    },
+  ],
+
+  //
+  // Registries
+  // https://docs.renovatebot.com/configuration-options/#registryaliases
+  //
+
+
+  //
+  // Managers
+  //
+
+  // Setting enabledManagers disables ALL other managers, which is undesirable because we
+  // want ALL our dependencies to be managed
+  // "enabledManagers": [],
+}
