@@ -3,4 +3,18 @@
   "extends": [
     "config:recommended"
   ]
+  "addLabels": [
+    "TEST APIs Review Request",
+  ],
+  "assigneesFromCodeOwners": true,
+  "pip-compile": {
+    "managerFilePatterns": ["/requirements(-dev)?\\.txt$/"],
+  },
+  "pip_requirements": {
+    "enabled": false,
+    "ignorePaths": ["*"]
+  },
+  "pip_setup": {
+    "enabled": false
+  },
 }
