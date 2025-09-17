@@ -4,5 +4,50 @@
 #
 #    pip-compile --no-emit-index-url requirements.in
 #
-aiobotocore==2.15.2
+aiobotocore==2.24.1
     # via -r requirements.in
+aiohappyeyeballs==2.6.1
+    # via aiohttp
+aiohttp==3.12.15
+    # via aiobotocore
+aioitertools==0.12.0
+    # via aiobotocore
+aiosignal==1.4.0
+    # via aiohttp
+attrs==25.3.0
+    # via aiohttp
+botocore==1.39.11
+    # via aiobotocore
+frozenlist==1.7.0
+    # via
+    #   aiohttp
+    #   aiosignal
+idna==3.10
+    # via yarl
+jmespath==1.0.1
+    # via
+    #   aiobotocore
+    #   botocore
+multidict==6.6.4
+    # via
+    #   aiobotocore
+    #   aiohttp
+    #   yarl
+propcache==0.3.2
+    # via
+    #   aiohttp
+    #   yarl
+python-dateutil==2.9.0.post0
+    # via
+    #   aiobotocore
+    #   botocore
+six==1.17.0
+    # via python-dateutil
+typing-extensions==4.15.0
+    # via aiosignal
+urllib3==2.5.0
+    # via botocore
+wrapt==1.17.3
+    # via aiobotocore
+yarl==1.20.1
+    # via aiohttp
