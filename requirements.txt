@@ -4,5 +4,52 @@
 #
 #    pip-compile --no-emit-index-url requirements.in
 #
-aiobotocore==2.15.2
+aiobotocore==3.8.0
     # via -r requirements.in
+aiohappyeyeballs==2.7.1
+    # via aiohttp
+aiohttp==3.14.3
+    # via aiobotocore
+aioitertools==0.13.0
+    # via aiobotocore
+aiosignal==1.4.0
+    # via aiohttp
+attrs==26.1.0
+    # via aiohttp
+botocore==1.43.46
+    # via aiobotocore
+frozenlist==1.8.0
+    # via
+    #   aiohttp
+    #   aiosignal
+idna==3.18
+    # via yarl
+jmespath==1.1.0
+    # via
+    #   aiobotocore
+    #   botocore
+multidict==6.7.1
+    # via
+    #   aiobotocore
+    #   aiohttp
+    #   yarl
+propcache==0.5.2
+    # via
+    #   aiohttp
+    #   yarl
+python-dateutil==2.9.0.post0
+    # via
+    #   aiobotocore
+    #   botocore
+six==1.17.0
+    # via python-dateutil
+typing-extensions==4.16.0
+    # via
+    #   aiohttp
+    #   aiosignal
+urllib3==2.7.0
+    # via botocore
+wrapt==2.2.2
+    # via aiobotocore
+yarl==1.24.5
+    # via aiohttp
